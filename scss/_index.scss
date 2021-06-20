@@ -1,0 +1,91 @@
+@mixin hide-text {
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1024px;
+}
+
+header {
+  h1 {
+    a {
+      display: block;
+      width: 170px;
+      height: 40px;
+      background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/student-week1/logo-all-dark.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      @include hide-text;
+    }
+    .logo-sm {
+      display: block;
+      width: 115px;
+      height: 18px;
+      background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/student-week1/logotype-sm-dark.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      @include hide-text;
+    }
+  }
+}
+
+main {
+  aside {
+    a {
+      &:hover {
+        background-color: #eaf0ed;
+      }
+    }
+  }
+  article {
+    .btn-light-hover {
+      &:hover {
+        background: #3f5d45;
+        color: #eaf0ed !important;
+      }
+    }
+
+    .tag-daily {
+      writing-mode: vertical-lr;
+      letter-spacing: 3px;
+      line-height: 20px;
+    }
+
+    .btn-favorite {
+      background: url("https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/favorite_border.png?raw=true")
+        center center no-repeat;
+    }
+
+    nav {
+      .pagination-hover {
+        li a {
+          &:hover {
+            background: #3f5d45;
+            color: #eaf0ed !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  form {
+    .input-height {
+      height: 56px;
+    }
+  }
+  h2 {
+    a {
+      display: block;
+      width: 172px;
+      height: 32px;
+      background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/student-week1/logotype-lg-dark.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      @include hide-text;
+    }
+  }
+}

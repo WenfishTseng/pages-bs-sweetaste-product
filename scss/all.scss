@@ -1,0 +1,174 @@
+// Require
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+// Optional
+// Layout & components
+@import "bootstrap/root";
+@import "bootstrap/reboot";
+@import "bootstrap/type";
+@import "bootstrap/images";
+@import "bootstrap/containers";
+@import "bootstrap/grid";
+@import "bootstrap/forms";
+@import "bootstrap/badge";
+@import "bootstrap/buttons";
+@import "bootstrap/transitions";
+@import "bootstrap/nav";
+@import "bootstrap/navbar";
+@import "bootstrap/bootstrap";
+
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+// bootstrap 的 utilites
+@import "bootstrap/utilities";
+
+// 自定義的 utilites
+// bootstrap utilites 一定要引入，不然會沒辦法使用原本的通用類別
+$utilities: map-merge(
+  $utilities,
+  (
+    // "object-fit": (
+    //   property: object-fit,
+    //   class: o-f,
+    //   responsive: true,
+    //   values: contain cover grab,
+    // ),
+    "BalooTamma2":
+      (
+        property: font-family,
+        class: ff,
+        values: (
+          bt2: "Baloo Tamma 2",
+        ),
+      ),
+    "margin2": (
+      // 因為有 margin 所以用 margin2
+      responsive: true,
+      property: margin,
+      class: m,
+      values: (
+        100: 100px,
+        // 新增 margin: 100px
+        60: 60px,
+        auto: auto // 覆蓋或修改  margin: auto,,,,,,,,
+      )
+    ),
+    "rounded": (
+      responsive: true,
+      property: border-radius,
+      class: rounded,
+      values: (
+        null: $border-radius,
+        0: 0,
+        1: $border-radius-sm,
+        2: $border-radius,
+        3: $border-radius-lg,
+        4: 2rem,
+        circle: 50%,
+        pill: $border-radius-pill,
+      ),
+    ),
+    "width": (
+      responsive: true,
+      property: width,
+      class: w,
+      values: (
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        100: 100%,
+        auto: auto,
+        0: 0,
+        1: 0.25rem,
+        2: 0.5rem,
+        3: 0.75rem,
+        4: 1rem,
+        5: 1.25rem,
+        6: 1.5rem,
+      ),
+    ),
+    "height": (
+      responsive: true,
+      property: height,
+      class: h,
+      values: (
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        100: 100%,
+        auto: auto,
+        0: 0,
+        1: 0.25rem,
+        2: 0.5rem,
+        3: 0.75rem,
+        4: 1rem,
+        5: 1.25rem,
+        6: 1.5rem,
+      ),
+    ),
+    "letter-spacing": (
+      property: letter-spacing,
+      class: tracking,
+      values: (
+        0: 0,
+        1: 0.0625rem,
+        2: 0.125rem,
+        3: 0.187rem,
+      ),
+    ),
+    // "font-family": (
+    //   property: font-family,
+    //   class: font,
+    //   values: (
+    //     sans: $font-family-sans-serif,
+    //     display: $font-family-display,
+    //   ),
+    // ),
+    "-font-size":
+      (
+        rfs: true,
+        property: font-size,
+        class: -fs,
+        values: (
+          1: $font-size-base * 0.875,
+          2: $font-size-base * 0.75,
+        ),
+      ),
+    "z-index": (
+      property: z-index,
+      class: z,
+      values: (
+        0: 0,
+        10: 10,
+        20: 10,
+        30: 10,
+        auto: auto,
+      ),
+    ),
+    "text-decoration": (
+      property: text-decoration,
+      class: text-decoration,
+      values: (
+        none,
+      ),
+    ),
+    "object-fit": (
+      property: object-fit,
+      class: object,
+      values: (
+        contain,
+        cover,
+        fill,
+        none,
+        scale-down,
+      ),
+    )
+  )
+);
+
+// utilites/api 一定要在最後引入，會用到 mixins 跟 variables 定義的內容
+@import "bootstrap/utilities/api";
+
+@import "index";
